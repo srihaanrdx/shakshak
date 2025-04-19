@@ -1,0 +1,214 @@
+/* General Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+  
+  /* Containers */
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  /* Header + Nav */
+  header {
+    background: #020617;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav a {
+    color: #facc15;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #38bdf8;
+  }
+  
+  /* Hero */
+  .hero {
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    text-align: center;
+    padding: 80px 0;
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+  }
+  
+  /* About, Projects, Contact */
+  section {
+    padding: 60px 0;
+  }
+  .projects .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+  .project-card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Contact Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  form input, form textarea {
+    padding: 12px;
+    font-size: 16px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #f8fafc;
+  }
+  .glow-button {
+    background: #0ea5e9;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  .glow-button:hover {
+    box-shadow: 0 0 20px #38bdf8;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background: #020617;
+    padding: 30px 0;
+    color: #94a3b8;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { transform: translateY(60px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes type {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  .fade-in, .nav-fade {
+    animation: fadeIn 1s ease forwards;
+  }
+  .reveal-up {
+    animation: slideUp 1s ease forwards;
+  }
+  .parallax-fade {
+    animation: fadeIn 1.2s ease forwards;
+    background-attachment: fixed;
+  }
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    white-space: nowrap;
+    animation: type 3s steps(30, end), blink 0.75s step-end infinite;
+    max-width: 100%;
+  }
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  .glow-text {
+    color: #38bdf8;
+    text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8;
+  }
+  
+  /* Tilt effect for cards */
+  .tilt {
+    transition: transform 0.3s ease;
+  }
+  .tilt:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.03);
+  }
+  .retro-terminal code {
+    display: block;
+    background-color: #000000;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    padding: 25px;
+    border-radius: 10px;
+    line-height: 1.7;
+    box-shadow: 0 0 15px #00ff00cc;
+    border: 1px solid #00ff00;
+    animation: flicker 1.5s infinite alternate;
+  }
+  
+  .retro-terminal .comment {
+    color: #55ff55;
+    font-style: italic;
+  }
+  
+  /* Optional flicker effect for that CRT feel */
+  @keyframes flicker {
+    0%   { opacity: 1; }
+    49%  { opacity: 0.95; }
+    50%  { opacity: 0.98; }
+    100% { opacity: 0.97; }
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pixel-style code {
+  font-family: 'Press Start 2P', monospace;
+  background-color: #1a1a1a;
+  color: #00ffff;
+  font-size: 12px;
+  line-height: 2;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #008b8b;
+  border: 3px solid #00ffff;
+  text-shadow: 1px 1px 0 #004f4f;
+  overflow-x: auto;
+}
+
+/* Optional glow/flicker effect */
+@keyframes pixel-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+.pixel-style code {
+  animation: pixel-glow 2s infinite ease-in-out;
+}
